@@ -6,6 +6,7 @@ import errorHandler from "./middlewares/errorHandler.js";
 import tasksRouter from "./routes/tasks.js";
 import usersRouter from "./routes/users.js";
 import sequelize from "./config/db-mysql-sequelize.js";
+import authRouter from "./routes/auth.js";
 
 //dotenv parser
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use("/todos", todosRouter);
 app.use("/tasks", tasksRouter);
 app.use("/users", usersRouter);
+app.use("/auth", authRouter);
 
 app.use(errorHandler);
 
